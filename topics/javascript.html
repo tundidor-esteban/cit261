@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <title>CIT 261 - Esteban Tundidor</title>
+    <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/javascript.js"></script>
+  </head>
+  <body>
+<div>
+  <p><a class="back" href="../index.html"><- Back to Menu</a></p>
+  <h2>
+    JavaScript
+  </h2>
+  <h3>Loops, Conditional Statements, Functions, Arrays, Associative Arrays</h3>
+  <hr/>
+  <hr/>
+  <div id="mainContent">
+    <h3>Functions, Variables and Parameters</h3>
+    
+    <p>
+    
+    </p>
+
+    <h3>JSON Parse</h3>
+    <span>The JSON.parse() method parses a JSON string, constructing the JavaScript value or object described by the string. </span>
+    <h4>Syntax</h4>
+    <p>
+        <pre>JSON.parse(text[, reviver])</pre>
+    </p>
+    <div>
+    <b>Parameters</b><br/>
+    <ul>
+      <li>text: The string to parse as JSON. See the JSON object for a description of JSON syntax.
+      </li>
+      <li>reviver (Optional): If a function, this prescribes how the value originally produced by parsing is transformed, before being returned.
+      </li>
+    </div>
+    <h4>Example</h4>
+    <div>You can check it working on this site home page and the file <pre>js/javascript.js</pre></div>
+    <pre class="code">
+      var topics = '['
+                +'{"title":"JavaScript","url":"javascript.html"},'
+              +'{"title":"JavaScript Objects","url":"jsobjects.html"},'
+              +'{"title":"JSON","url":"json.html"},'
+              +'{"title":"AJAX","url":"ajax.html"},'
+              +'{"title":"Local Storage","url":"localstorage.html"},'
+              +'{"title":"Document Object Model","url":"dom.html"},'
+              +'{"title":"CSS3 Using JavaScript","url":"cssUsingJS.html"},'
+              +'{"title":"CSS3 Transitions, Animations, and Transformations","url":"transitions.html"},'
+              +'{"title":"JavaScript Events","url":"events.html"},'
+              +'{"title":"HTML5 Tags for Media","url":"media.html"},'
+              +'{"title":"CSS3 Transitions","url":"cssTransitions.html"},'
+              +'{"title":"CSS3 Transforms","url":"cssTransforms.html"},'
+              +'{"title":"CSS3 Animations","url":"cssAnimations.html"}'
+                +']';
+
+      function displayMenu() {
+          var elements = JSON.parse(topics);
+          var ol = document.getElementById("menu");
+          if (typeof(ol) != 'undefined' && ol != null){
+            for (var i = 0; i < elements.length ; i++) {
+                var li = document.createElement("li");
+                var a = document.createElement("a");
+                
+                a.appendChild(document.createTextNode(elements[i].title));
+                a.title = elements[i].title;
+                a.href = 'topics/' + elements[i].url;
+
+                li.appendChild(a);
+                ol.appendChild(li);
+            }
+          }
+      }</pre>
+    <h3>JSON Stringify</h3>
+    <span>To convert a JavaScript object into a string we use stringify.</span>
+    <h4>Syntax</h4>
+    <p>
+        <pre>JSON.stringify(json)</pre>
+    </p>
+    <h4>Example</h4>
+    <pre class="code">
+      var stringTopics = JSON.stringify(topics);
+      document.getElementById("divTopics").innerHTML = stringTopics;</pre>
+    <div id="divTopics"></div>
+    <span>Try yourself: open the console and type 
+      <pre class="code">
+      var stringTopics = JSON.stringify(topics);
+      document.getElementById("divTopics").innerHTML = stringTopics;</pre>
+    </span>
+  </div>
+</div>
+<footer>
+  &copy;Esteban Tundidor
+</footer>
+  </body>
+</html> 
