@@ -6,90 +6,97 @@
   </head>
   <body>
 <div>
-  <p><a class="back" href="../index.html"><- Back to Menu</a></p>
+  <div class="back"><a href="../index.html"><- Back to Menu</a></div>
   <h2>
     JavaScript
   </h2>
   <h3>Loops, Conditional Statements, Functions, Arrays, Associative Arrays</h3>
-  <hr/>
-  <hr/>
+
   <div id="mainContent">
-    <h3>Functions, Variables and Parameters</h3>
-    
-    <p>
-    
-    </p>
 
-    <h3>JSON Parse</h3>
-    <span>The JSON.parse() method parses a JSON string, constructing the JavaScript value or object described by the string. </span>
-    <h4>Syntax</h4>
-    <p>
-        <pre>JSON.parse(text[, reviver])</pre>
-    </p>
-    <div>
-    <b>Parameters</b><br/>
-    <ul>
-      <li>text: The string to parse as JSON. See the JSON object for a description of JSON syntax.
-      </li>
-      <li>reviver (Optional): If a function, this prescribes how the value originally produced by parsing is transformed, before being returned.
-      </li>
-    </div>
-    <h4>Example</h4>
-    <div>You can check it working on this site home page and the file <pre>js/javascript.js</pre></div>
-    <pre class="code">
-      var topics = '['
-                +'{"title":"JavaScript","url":"javascript.html"},'
-              +'{"title":"JavaScript Objects","url":"jsobjects.html"},'
-              +'{"title":"JSON","url":"json.html"},'
-              +'{"title":"AJAX","url":"ajax.html"},'
-              +'{"title":"Local Storage","url":"localstorage.html"},'
-              +'{"title":"Document Object Model","url":"dom.html"},'
-              +'{"title":"CSS3 Using JavaScript","url":"cssUsingJS.html"},'
-              +'{"title":"CSS3 Transitions, Animations, and Transformations","url":"transitions.html"},'
-              +'{"title":"JavaScript Events","url":"events.html"},'
-              +'{"title":"HTML5 Tags for Media","url":"media.html"},'
-              +'{"title":"CSS3 Transitions","url":"cssTransitions.html"},'
-              +'{"title":"CSS3 Transforms","url":"cssTransforms.html"},'
-              +'{"title":"CSS3 Animations","url":"cssAnimations.html"}'
-                +']';
+    <p>JavaScript, often abbreviated as JS, is a high-level, just-in-time compiled programming language.</p>
+      <h3> Functions, Variables and Parameters </h3>
+  <div>
+  Functions are, by definition, the smallest named-division of a program that perform an action. 
+  A JavaScript function is executed when something invokes it. 
+  A function have 3 sections:
+  <ul>
+    <li>Name: Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).</li>
+    <li>Parameters: the parameters are listed inside the parentheses () in the function definition. These are the arguments, the values received by the function when it is invoked.</li>
+    <li>Body: When JavaScript reaches a return statement, the function will stop executing.
 
-      function displayMenu() {
-          var elements = JSON.parse(topics);
-          var ol = document.getElementById("menu");
-          if (typeof(ol) != 'undefined' && ol != null){
-            for (var i = 0; i < elements.length ; i++) {
-                var li = document.createElement("li");
-                var a = document.createElement("a");
-                
-                a.appendChild(document.createTextNode(elements[i].title));
-                a.title = elements[i].title;
-                a.href = 'topics/' + elements[i].url;
+If the function was invoked from a statement, JavaScript will "return" to execute the code after the invoking statement.
 
-                li.appendChild(a);
-                ol.appendChild(li);
-            }
-          }
-      }</pre>
-    <h3>JSON Stringify</h3>
-    <span>To convert a JavaScript object into a string we use stringify.</span>
-    <h4>Syntax</h4>
-    <p>
-        <pre>JSON.stringify(json)</pre>
-    </p>
-    <h4>Example</h4>
-    <pre class="code">
-      var stringTopics = JSON.stringify(topics);
-      document.getElementById("divTopics").innerHTML = stringTopics;</pre>
-    <div id="divTopics"></div>
-    <span>Try yourself: open the console and type 
-      <pre class="code">
-      var stringTopics = JSON.stringify(topics);
-      document.getElementById("divTopics").innerHTML = stringTopics;</pre>
-    </span>
-  </div>
+Functions often compute a return value. The return value is "returned" back to the "caller":
+</li>
+  </ul>
+<pre class="code">
+function functionName(<i>parameter1, parameter2,...</i>){
+  statements;
+  return value;
+}
+</pre>
+</div>
+<h3>Loops</h3>
+<p>Loops offer a quick and easy way to do something repeatedly. </p>
+<p>
+  There are many different kinds of loops, but they all essentially do the same thing: they repeat an action some number of times. (Note that it's possible that number could be zero!) <br/>
+  The various loop mechanisms offer different ways to determine the start and end points of the loop. There are various situations that are more easily served by one type of loop over the others.<br/>
+  The statements for loops provided in JavaScript are (visit mozilla.org for a deeper explanation):
+  <ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for_statement" target="_new">for statement</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#do...while_statement" target="_new">do...while statement</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#while_statement" target="_new">while statement</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#labeled_statement" target="_new">labeled statement</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#break_statement" target="_new">break statement</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#continue_statement" target="_new">continue statement</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for...in_statement" target="_new">for...in statement</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for...of_statement" target="_new">for...of statement</a></li>
+</ul>
+</p>
+<h3>Conditional Statements</h3>
+<p>The if/else statement executes a block of code if a specified condition is 
+true. If the condition is false, another block of code can be executed.</p>
+<p>The if/else statement is a part of JavaScript's "Conditional" Statements, 
+which are used to perform different actions based on different conditions.</p>
+<p>In JavaScript we have the following conditional statements:</p>
+<ul>
+  <li>Use<b> if </b>to specify a block of code to be executed, if a specified condition is true</li>
+  <li>Use <b>else</b> to specify a block of code to be executed, if the same condition is false</li>
+  <li>Use <b>else if</b> to specify a new condition to test, if the first condition is false</li>
+  <li>Use <b>switch</b> to select one of many blocks of code to be executed</li>
+</ul>
+<h3>Arrays</h3>
+<p>The Array object is used to store multiple values in a single variable:</p>
+<pre class="code">
+var cars = ["Saab", "Volvo", "BMW"];
+</pre>
+<p>
+  Array indexes are zero-based: The first element in the array is 0, the second is 1, and so on.
+</p>
+<pre class="code">
+console.log(cars[0]); // Saab
+console.log(cars[1]); // Volvo
+</pre>
+
+<h3> Associative Arrays</h3>
+<p>
+We can create it by assigning a literal to a variable.
+<pre class="code">
+var arr = { "one": 1, "two": 2, "three": 3 }; 
+</pre>
+Unlike simple arrays, we use curly braces instead of square brackets.
+
+This has implicitly created a variable of type Object.
+
+The content is accessed by keys, whatever the method used to declare the array.
+<pre class="code">
+var y = arr["one"];
+</pre>
+</p>
 </div>
 <footer>
-  &copy;Esteban Tundidor
+  <little>Main Sources: w3schools.com // developer.mozilla.org </little> &copy;Esteban Tundidor
 </footer>
   </body>
 </html> 

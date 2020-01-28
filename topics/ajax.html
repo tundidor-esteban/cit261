@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>CIT 261 - Esteban Tundidor</title>
+    <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/javascript.js"></script>
+  </head>
+  <body>
+<div>
+  <div class="back"><a href="../index.html"><- Back to Menu</a></div>
+  <h2>
+    AJAX
+  </h2>
+  <h3>AJAX = Asynchronous JavaScript and XML</h3>
+<div id="mainContent">
+<p>XML sounds very 1990 but don't panic! it is only a misleading name. Currently is more common to use JSON instead of XML as transport format. The point is that AJAJ is harder to pronounce than AJAX.</p>
+<p>
+To request data from a server you must use an XMLHttpRequest object. All modern browsers have this built in. </p>
+<ul>
+  <li>Update a web page without reload.</li>
+  <li>Request or Recieve data from the server</li>
+  <li>Send data to a server in background</li>
+</ul>
+<h3>How it works</h3>
+<img src="https://www.w3schools.com/js/pic_ajax.gif">
+<h3>Example:</h3>
+<pre class="code">
+// 1. create a new XMLHttpRequest object
+var myRequest = new XMLHttpRequest();
+// 2. open the request and pass the HTTP method name and the endpoint as parameters
+myRequest.open('GET', 'http://dummy.restapiexample.com/api/v1/employees');
+// 3. write a function that runs anytime the state of the AJAX request changes
+myRequest.onreadystatechange = function () { 
+    // 4. check if the request has a readyState of 4, which indicates the server has responded
+
+    if (myRequest.readyState === 4) {
+        // 5. insert the content sent by the server, it is plain text. In case that it is a JSON you need to parse it 
+        var response = JSON.parse(myRequest.responseText);
+        document.getElementById('ajax-content').innerHTML = response.data[Math.floor(Math.random() * 10)].employee_name;
+    }
+};
+//6. you need to send it, usually it is related with an event as a click
+myRequest.send();
+</pre>
+
+<button onclick="ajaxExample()" class="button">Try it!</button>
+<div id="ajax-content"></div>
+ 
+</div>
+<footer>
+  <little>Main Sources: w3schools.com // developer.mozilla.org </little> &copy;Esteban Tundidor
+</footer>
+  </body>
+</html> 

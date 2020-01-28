@@ -32,6 +32,17 @@ function displayMenu() {
     }
 }
 
+function ajaxExample(){
+	var myRequest = new XMLHttpRequest();
+	myRequest.open('GET', 'http://dummy.restapiexample.com/api/v1/employees');
+	myRequest.onreadystatechange = function () { 
+    	if (myRequest.readyState === 4) {
+    		var response = JSON.parse(myRequest.responseText);
+        	document.getElementById('ajax-content').innerHTML = response.data[Math.floor(Math.random() * 25)].employee_name;
+    	}
+	};
+	myRequest.send();
+}
 
 document.addEventListener("DOMContentLoaded", function(event) { 
  // is only executed when the DOM is fully loaded

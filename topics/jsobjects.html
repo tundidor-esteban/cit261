@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>CIT 261 - Esteban Tundidor</title>
+    <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/javascript.js"></script>
+  </head>
+  <body>
+<div>
+  <div class="back"><a href="../index.html"><- Back to Menu</a></div>
+  <h2>
+    JavaScript Objects
+  </h2>
+  <h3>Is JavaScript object-oriented?</h3>
+
+<div id="mainContent">
+<p>The answers is Yes! but... it is not class oriented as many other OO Languages (like Java and  C#). </p>
+<p>Objects in JavaScript are collections of key/value pairs. The values can consist of properties and methods, and may contain all other JavaScript data types, such as strings, numbers, and Booleans.
+</p>
+<p>
+  Objects are composed by two main elements <b>attributes</b> and <b>methods</b>.
+</p>
+<p>
+  <b>Attributes</b>: Are the properties of an object. The details and characteristics of it.<br/>
+  <b>Methods</b>: Are actions that can be performed on objects. An object method is an object property containing a function definition.<br/>
+</p>
+<pre class="code">
+class Hero {
+    constructor(name, level) {
+        this.name = name;
+        this.level = level;
+    }
+
+    // Adding a method to the constructor
+    greet() {
+        return this.name + ' says hello.';
+    }
+}
+</pre>
+Try it! Open the console and type:
+<pre class="code">
+  var superHero = new Hero('Esteban',2);
+  superHero.greet(); // "Esteban says hello."
+</pre>
+</div>
+<footer>
+  <little>Main Sources: w3schools.com // developer.mozilla.org </little> &copy;Esteban Tundidor
+</footer>
+  </body>
+</html> 

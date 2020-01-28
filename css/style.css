@@ -64,7 +64,14 @@ pre.code{
     word-wrap: break-word;
 }
 
-a.back {
+div.back {
+    background-color: #efefef;
+    padding-left: 5px;
+    margin: -5 -5 10px -5;
+    font-size: 10pt;
+    line-height: 20px;
+}
+div.back a{
     text-decoration: none;
     color:#D10101;
 }
