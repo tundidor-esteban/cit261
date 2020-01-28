@@ -33,9 +33,9 @@ myRequest.onreadystatechange = function () {
     // 4. check if the request has a readyState of 4, which indicates the server has responded
 
     if (myRequest.readyState === 4) {
-        // 5. insert the content sent by the server, it is plain text. In case that it is a JSON you need to parse it 
-        var response = JSON.parse(myRequest.responseText);
-        document.getElementById('ajax-content').innerHTML = response.data[Math.floor(Math.random() * 10)].employee_name;
+        // 5. insert the content sent by the server, it is plain text is ok. But in case that it is a JSON you need to parse it 
+        var employee = JSON.parse(myRequest.responseText).data[Math.floor(Math.random() * 25)];
+        document.getElementById('ajax-content').innerHTML = employee.employee_name + ' ('+ employee.employee_age +')';
     }
 };
 //6. you need to send it, usually it is related with an event as a click

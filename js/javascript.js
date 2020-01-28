@@ -37,8 +37,8 @@ function ajaxExample(){
 	myRequest.open('GET', 'https://dummy.restapiexample.com/api/v1/employees');
 	myRequest.onreadystatechange = function () { 
     	if (myRequest.readyState === 4) {
-    		var response = JSON.parse(myRequest.responseText);
-        	document.getElementById('ajax-content').innerHTML = response.data[Math.floor(Math.random() * 25)].employee_name;
+    		var employee = JSON.parse(myRequest.responseText).data[Math.floor(Math.random() * 25)];
+        	document.getElementById('ajax-content').innerHTML = employee.employee_name + ' ('+ employee.employee_age +')';
     	}
 	};
 	myRequest.send();
