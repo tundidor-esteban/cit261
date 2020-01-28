@@ -34,7 +34,7 @@ function displayMenu() {
 
 function ajaxExample(){
 	var myRequest = new XMLHttpRequest();
-	myRequest.open('GET', 'http://dummy.restapiexample.com/api/v1/employees');
+	myRequest.open('GET', 'https://dummy.restapiexample.com/api/v1/employees');
 	myRequest.onreadystatechange = function () { 
     	if (myRequest.readyState === 4) {
     		var response = JSON.parse(myRequest.responseText);
