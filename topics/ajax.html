@@ -27,7 +27,7 @@ To request data from a server you must use an XMLHttpRequest object. All modern 
 // 1. create a new XMLHttpRequest object
 var myRequest = new XMLHttpRequest();
 // 2. open the request and pass the HTTP method name and the endpoint as parameters
-myRequest.open('GET', 'http://dummy.restapiexample.com/api/v1/employees');
+myRequest.open('GET', 'https://dummy.restapiexample.com/api/v1/employees');
 // 3. write a function that runs anytime the state of the AJAX request changes
 myRequest.onreadystatechange = function () { 
     // 4. check if the request has a readyState of 4, which indicates the server has responded
@@ -44,7 +44,22 @@ myRequest.send();
 
 <button onclick="ajaxExample()" class="button">Try it!</button>
 <div id="ajax-content"></div>
- 
+<h3>POST Example:</h3>
+<pre class="code">
+var myRequest = new XMLHttpRequest();
+var json = JSON.stringify('{"name":"Esteban Tundidor","salary":"123","age":"23"}');
+myRequest.open('POST', 'https://dummy.restapiexample.com/api/v1/create');
+myRequest.setRequestHeader('Content-type','application/json; charset=utf-8');
+myRequest.onreadystatechange = function () { 
+  if (myRequest.readyState === 4) {
+    document.getElementById('ajax-content-done').innerHTML = 'Done!';
+  }
+}
+myRequest.send(json);
+</pre>
+<button onclick="ajaxPostExample()" class="button">Try it!</button>
+<div id="ajax-content-done"></div>
+
 </div>
 <footer>
   <little>Main Sources: w3schools.com // developer.mozilla.org </little> &copy;Esteban Tundidor
