@@ -18,6 +18,38 @@
     <p>
       JSON uses human readable text to transmit data objects consisting of attribute–value pairs and array data types. Nowdays it is a very common format in many systems and languages.
     </p>
+    <p>
+      Even when JSON is, literally, a plain text with a key-value format in a hierarchical structure, you are able to define some native values: 
+    </p>
+    <ul>
+      <li>String</li>
+      <li>Number</li>
+      <li>true / false</li>
+      <li>null</li>
+      <li>Object</li>
+      <li>Array</li>
+    </ul>
+    <p>By convention these are the accepted formats, but is responsibility of the parser to convert it to the proper class in the client system.</p>
+
+    <h4>Example</h4>
+    <pre class="code">
+      {
+        "firstname":"Roger", //String
+        "lastname":"Federer",
+        "occupation":"Professional Tennis Player",
+        "bachelor": null, // Null
+        "gender":"Male",
+        "age": 38, // Number
+        "atp_number_1": false, // false
+        "was_number_1": true, // true
+        "titles" : [ // Array
+          {"Tournament":"Wimbledon","year":2003}, //object
+          {"Tournament":"Australian Open","year":2004},
+          ....
+        ]
+      }
+    </pre>
+
     <h3>JSON Parse</h3>
     <span>The JSON.parse() method parses a JSON string, constructing the JavaScript value or object described by the string. </span>
     <h4>Syntax</h4>
