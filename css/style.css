@@ -101,3 +101,30 @@ div#mainContent {
     padding: 10px;
     background-color: #FFFFFF;
 }
+
+.classA{
+    font-size: 16px; 
+    line-height: 32px;
+    font-family: sans-serif;
+    padding: 5px;
+    color: black;
+    background-color: #EDEDED;
+}
+
+.classB{
+    font-size: 18px; 
+    line-height: 40px;
+    font-family: Helvetica;
+    padding: 15px;
+    color: red;
+    background-color: black;
+}
+
+.classC{
+    font-size: 12px; 
+    line-height: 12px;
+    font-family: Arial;
+    padding: 5px;
+    color: black;
+    background-color: orange;
+}

@@ -3,6 +3,7 @@
     <title>CIT 261 - Esteban Tundidor</title>
     <link rel="stylesheet" href="../css/style.css">
   <script src="../js/javascript.js"></script>
+  <script src="../js/styles.js"></script>
   </head>
   <body>
 <div>
@@ -12,6 +13,55 @@
   </h2>
   <h3>Manipulating CSS Class Properties Using JavaScript</h3>
 <div id="mainContent">
+<p>
+  CSS or "Cascading Style Sheets" is a standard to define the styles of the differents elements of the DOM. So, HTML is oriented to the structure and CSS is oriented to the visual definition. If the HTML is the wall, the CSS is the paint. Actually a very powerful paint because you will be able to move the windows positions just changing the definition.
+</p>
+<br/>
+<p>
+  If you add JS to the equation, you can literally make magic and dynamically change the elements and definitions. You have 2 options to manipulate the styles with JavaScript:
+</p>
+<ul>
+  <li>Setting the style directly to an element</li>
+  <li>Setting or removing the class attribute from an element</li>
+</ul>
+<h3>Setting the style directly to an element</h3>
+<p>Every HTML element has a style attribute, and it is an Object. You will be able to set or specify a CSS property and set its value.</p>
+<pre class="code">let myElement = document.querySelector(".code");
+myElement.style.backgroundColor = "#D93600";
+myElement.style.fontSize = "1.0em";
+</pre>
+<b>Try it now:</b>
+<button id="orange">Orange</button>
+<button id="white">White</button>
+<button id="black">Black</button>
+<button id="red">Red</button>
+<button id="increase">Big</button>
+<button id="smaller">Small</button>
+
+<p>
+  You can identify one by one by ID with <pre>document.getElementById("myID")</pre> or searching for it and changing all the elements with the same class name with <pre>document.querySelector(".myClassName")</pre> or <pre>document.getElementsByClassName("myClassName")</pre>
+</p>
+
+<h3>Setting or removing the class attribute from an element</h3>
+<p>
+  An easier and clearer way is just changing the class attribute from an element or a collection of elements. The only issue with this approach is that you need to pre define it, instead of compose it dinamically. 
+</p>
+<pre class="code" id="exampleDiv">let div = document.querySelector("#testDiv");
+div.classList.add("classA"); // add class "classA"
+div.classList.add("classB"); // add class "classB"
+div.classList.add("classC"); // add class "classC"
+alert(div.classList);
+
+div.classList.remove("classC"); // remove class "classC"
+
+alert(div.classList);
+</pre>
+<b>Try it now:</b>
+<button id="alert">example</button>
+<button id="classA">classA</button>
+<button id="classB">classB</button>
+<button id="classC">classC</button>
+<div id="testDiv">testDiv</div>
 
 </div>
 <footer>
