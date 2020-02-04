@@ -2,7 +2,8 @@
   <head>
     <title>CIT 261 - Esteban Tundidor</title>
     <link rel="stylesheet" href="../css/style.css">
-	<script src="../js/javascript.js"></script>
+	  <script src="../js/javascript.js"></script>
+    <script src="../js/json.js"></script>
   </head>
   <body>
 <div>
@@ -108,14 +109,11 @@
     </p>
     <h4>Example</h4>
     <pre class="code">
-      var stringTopics = JSON.stringify(topics);
-      document.getElementById("divTopics").innerHTML = stringTopics;</pre>
-    <div id="divTopics"></div>
-    <span>Try yourself: open the console and type 
-      <pre class="code">
-      var stringTopics = JSON.stringify(topics);
-      document.getElementById("divTopics").innerHTML = stringTopics;</pre>
-    </span>
+    var elements = JSON.parse(topics);
+    var string = JSON.stringify(elements[Math.floor(Math.random() * elements.length)]);
+    document.getElementById("div_stringify").innerHTML = string;</pre>
+    <button id="btn_stringify">Try it!</button>
+    <div id="div_stringify"></div>
   </div>
 </div>
 <footer>

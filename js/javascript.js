@@ -47,15 +47,15 @@ function ajaxExample(){
 
 function ajaxPostExample(){
 	var myRequest = new XMLHttpRequest();
-var json = JSON.stringify('{"name":"Esteban Tundidor","salary":"123","age":"23"}');
-myRequest.open('POST', 'https://dummy.restapiexample.com/api/v1/create',true);
-myRequest.setRequestHeader('Content-type','application/json; charset=utf-8');
-myRequest.onreadystatechange = function () { 
-  if (myRequest.readyState === 4) {
-    document.getElementById('ajax-content-done').innerHTML = 'Done!';
-  }
-}
-myRequest.send(json);
+	var json = JSON.stringify('{"name":"Esteban Tundidor","salary":"123","age":"23"}');
+	myRequest.open('POST', 'https://dummy.restapiexample.com/api/v1/create',true);
+	myRequest.setRequestHeader('Content-type','application/json; charset=utf-8');
+	myRequest.onreadystatechange = function () { 
+	  if (myRequest.readyState === 4) {
+	    document.getElementById('ajax-content-done').innerHTML = 'Done!';
+	  }
+	}
+	myRequest.send(json);
 }
 
 document.addEventListener("DOMContentLoaded", function(event) { 

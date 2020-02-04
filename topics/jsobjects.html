@@ -38,11 +38,53 @@ class Hero {
     }
 }
 </pre>
-Try it! Open the console and type:
+
+<h3>Inheritance</h3>
+<p>
+  Thanks to ES6, Javascript Object Oriented pattern is class oriented, a big difference from ES5 where it was a prototype-based OO pattern. Classes are clearest than prototypes. 
+</p>
+
+<p><b>Example:</b></p>
 <pre class="code">
-  var superHero = new Hero('Esteban',2);
-  superHero.greet(); // "Esteban says hello."
+  class Man {
+  constructor(name, level) {
+        this.name = name;
+        this.level = level;
+    }
+
+    greet() {
+        return 'Hi! My name is ' + this.name + ', and I am a ' + this.level +  '.';
+    }
+
+}
+
+class Hero extends Man {
+  constructor (name) {
+    super(name, 'hero');
+  }
+}
+
+
+class Villain extends Man {
+  constructor (name) {
+    super(name, 'villain');
+  }
+}
+
+class Citizen extends Man {
+  constructor (name) {
+    super(name, 'citizen');
+  }
+}
 </pre>
+
+<b>Try it!</b>
+<label>put your name: <input type="text" id="name" /></label>
+<label>Select your role:</label>
+
+<button id="hero">Hero</button>
+<button id="villain">Villain</button>
+<button id="citizen">Citizen</button>
 </div>
 <footer>
   <little>Main Sources: w3schools.com // developer.mozilla.org </little> &copy;Esteban Tundidor

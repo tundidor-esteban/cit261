@@ -1,11 +1,49 @@
-class Hero {
-    constructor(name, level) {
+class Man {
+	constructor(name, level) {
         this.name = name;
         this.level = level;
     }
 
-    // Adding a method to the constructor
     greet() {
-        return this.name + ' says hello.';
+        return 'Hi! My name is ' + this.name + ', and I am a ' + this.level +  '.';
     }
+
 }
+
+class Hero extends Man {
+  constructor (name) {
+    super(name, 'hero');
+  }
+}
+
+
+class Villain extends Man {
+  constructor (name) {
+    super(name, 'villain');
+  }
+}
+
+class Citizen extends Man {
+  constructor (name) {
+    super(name, 'citizen');
+  }
+}
+
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+	let name = document.getElementById('name');
+
+	//I know there are better ways to do it, but for a example is good enough.
+	document.getElementById('hero').addEventListener("click",()=>{
+            let character = new Hero(name.value); 
+            alert(character.greet());
+        });
+	document.getElementById('villain').addEventListener("click",()=>{
+            let character = new Villain(name.value); 
+            alert(character.greet());
+        });
+	document.getElementById('citizen').addEventListener("click",()=>{
+            let character = new Citizen(name.value); 
+            alert(character.greet());
+        });
+});
