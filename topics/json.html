@@ -50,6 +50,8 @@
         ]
       }
     </pre>
+    <h4>Working example</h4>
+    <ul id="menu"></ul>
 
     <h3>JSON Parse</h3>
     <span>The JSON.parse() method parses a JSON string, constructing the JavaScript value or object described by the string. </span>
@@ -112,7 +114,8 @@
     var elements = JSON.parse(topics);
     var string = JSON.stringify(elements[Math.floor(Math.random() * elements.length)]);
     document.getElementById("div_stringify").innerHTML = string;</pre>
-    <button id="btn_stringify">Try it!</button>
+    <button id="btn_stringify">Try it!</button><br/>
+    <small>(it will parse an show a random object)</small>
     <div id="div_stringify"></div>
   </div>
 </div>

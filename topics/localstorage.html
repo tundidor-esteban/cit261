@@ -3,6 +3,7 @@
     <title>CIT 261 - Esteban Tundidor</title>
     <link rel="stylesheet" href="../css/style.css">
   <script src="../js/javascript.js"></script>
+  <script src="../js/localstorage.js"></script>
   </head>
   <body>
 <div>
@@ -10,8 +11,22 @@
   <h2>
     Local Storage
   </h2>
-  <h3>Asynchronous JavaScript and XML</h3>
+  <h3>Storing and Retrieving Data</h3>
 <div id="mainContent">
+<p>Local storage is data stored in the user's browser (yes, his name doesn't allow confusion). In oposition to the cookies, it doesn't is included on the request, so it make it lighter but you are not aware of what's actually stored.</p>
+<p>
+  You can debug your localStorage using the Developers Tools at Chrome <br/>
+  <img src="../img/localStorage.png" width="50%" style="border: 1px solid blue" />
+</p>
+<br/>
+<h4>Working example</h4>
+    
+    <input id="item" type="text" class="input_big" placeholder="Type new items, it will prevent duplicate content">
+    <button id="insert">Insert</button>
+    <button id="clear">Clear All</button>
+
+    <h4>Items</h4>
+    <ul id="itemsList"></ul>
 
 </div>
 <footer>
