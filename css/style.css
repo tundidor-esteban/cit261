@@ -23,6 +23,10 @@ h3 {
     margin-top: 10px;
 }
 
+h4{
+    clear: both;
+} 
+
 button {
   background-color: orange;
   border: none;
@@ -100,6 +104,7 @@ footer {
 div#mainContent {
     padding: 10px;
     background-color: #FFFFFF;
+    height: 100%;
 }
 
 .classA{
@@ -141,4 +146,12 @@ div#mainContent {
     width: 100%;
     max-width: 100%;
     line-height: 1;
+}
+
+
+.domExample {
+    padding: 10px;
+    width: 120px;
+    float: left;
+    margin: 2px;
 }
