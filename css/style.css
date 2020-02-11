@@ -104,7 +104,7 @@ footer {
 div#mainContent {
     padding: 10px;
     background-color: #FFFFFF;
-    height: 100%;
+    min-height: 100%;
 }
 
 .classA{

@@ -1,0 +1,43 @@
+div.example {
+  width: 200px;
+  height: 150px;
+  background: red;
+  transition: width 2s;
+  color: white;
+  font-size: 10pt;
+  padding: 5px;
+}
+
+div.example:hover {
+  width: 90%;
+}
+
+div#transition2 {
+  transition-delay: 2s;
+}
+
+div#transition3 {
+  transition-duration: 10s;
+}
+
+div#transition4 {
+	transition-property: font-size,width;
+	transition-duration: 5s;
+	transition-delay: 1s;
+}
+
+div.example#transition4:hover,div.example#transition5:hover {
+  font-size: 36pt;
+}
+ 
+div#transition5 {
+	transition-property: font-size,width;
+	transition-timing-function: steps(10, end);
+	transition-duration: 5s;
+}
+div.example#transition5 {
+	font-size: 2pt;
+}
+div.example#transition5:hover {
+  font-size: 20pt;
+}
