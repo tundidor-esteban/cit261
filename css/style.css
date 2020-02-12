@@ -19,7 +19,6 @@ h3 {
     font-size: 1.5rem;
     text-align: center;
     border-bottom: 1px solid #bbb;
-    border-top: 1px solid #bbb;
     margin-top: 10px;
 }
 
@@ -146,6 +145,46 @@ div#mainContent {
     width: 100%;
     max-width: 100%;
     line-height: 1;
+}
+
+.horizontalMenu {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #CCC;
+    width: 99vw;
+    min-width: 99vw;
+    max-width: 99vw;
+    max-height: 50px;
+    border-bottom: solid 1px;
+    border-top: solid 1px;
+}
+
+.horizontalMenu li {
+    float: left;
+    list-style-type: none;
+    vertical-align: middle;
+}
+
+.horizontalMenu li a {
+    display: block;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    overflow: hidden;
+    max-width: 7vw;
+    max-height: 50px;
+    min-width: 1vw;
+    transition-property: max-width;
+    transition-duration: 1s;
+    transition-delay: 0.5s;
+}
+
+.horizontalMenu li a:hover {
+    background-color: red;
+    color: white;
+    max-width: 30vw;
 }
 
 

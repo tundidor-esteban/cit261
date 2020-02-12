@@ -5,4 +5,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.getElementById("div_stringify").innerHTML = string;
     });
 	
+	
+	if(document.getElementById('menuExample')){
+		displayMenu('','menuExample');
+	}
 });

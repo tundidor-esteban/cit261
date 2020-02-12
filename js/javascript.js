@@ -14,9 +14,9 @@ var topics = '['
 				+'{"title":"CSS3 Animations","url":"cssAnimations.html"}'
     			+']';
 
-function displayMenu() {
+function displayMenu(folder,idMenu) {
     var elements = JSON.parse(topics);
-    var ol = document.getElementById("menu");
+    var ol = document.getElementById(idMenu);
     if (typeof(ol) != 'undefined' && ol != null){
 	    for (var i = 0; i < elements.length ; i++) {
 	    	  var li = document.createElement("li");
@@ -24,7 +24,7 @@ function displayMenu() {
 	    	  
 	    	  a.appendChild(document.createTextNode(elements[i].title));
 	    	  a.title = elements[i].title;
-	    	  a.href = 'topics/' + elements[i].url;
+	    	  a.href = folder + elements[i].url;
 
 	  		  li.appendChild(a);
 	  		  ol.appendChild(li);
@@ -58,8 +58,24 @@ function ajaxPostExample(){
 	myRequest.send(json);
 }
 
+function createHorizontalMenu() {
+	var mainDiv = document.getElementById('mainContent');
+	if (mainDiv){
+		var ul = document.createElement("ul");
+		ul.id = 'menu';
+		ul.classList.add('horizontalMenu');
+		mainDiv.parentNode.insertBefore(ul,mainDiv);
+		displayMenu('','menu');	
+	}
+}
+
 document.addEventListener("DOMContentLoaded", function(event) { 
+	if(!document.getElementById('menu')){
+		createHorizontalMenu();
+	} else {
+		displayMenu('topics/','menu');	
+	}
  // is only executed when the DOM is fully loaded
-	displayMenu();
+	
 });
 
