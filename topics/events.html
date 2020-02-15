@@ -2,17 +2,29 @@
   <head>
     <title>CIT 261 - Esteban Tundidor</title>
     <link rel="stylesheet" href="../css/style.css">
-  <script src="../js/javascript.js"></script>
+    <script src="../js/javascript.js"></script>
+    <script src="../js/events.js"></script>
   </head>
   <body>
 <div>
   <div class="back"><a href="../index.html"><- Back to Menu</a></div>
   <h2>
-    AJAX
+    JS Events
   </h2>
-  <h3>Asynchronous JavaScript and XML</h3>
+  <h3>Triggering the magic</h3>
 <div id="mainContent">
-
+<h3>onClick</h3>
+<div class="exampleBox" id="click">click me!</div>
+<h3>onHover</h3>
+<div class="exampleBox" id="hover">hover me!</div>
+<h3>onMouseDown and onMouseUp</h3>
+<div class="exampleBox" id="updown">click me smoothly!</div>
+<h3>onFocus and onBlur</h3>
+<input type="text" class="input_big" name="onFocus" id="focus" value="click on me and then click outside">
+<div class="exampleBox" id="focusDiv"></div>
+<h3>onChange</h3>
+<input type="text" class="input_big" name="onChange" id="change" value="change me! (and click outside)">
+<div class="exampleBox" id="changeDiv"></div>
 </div>
 <footer>
   <little>Main Sources: w3schools.com // developer.mozilla.org </little> &copy;Esteban Tundidor

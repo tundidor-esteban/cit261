@@ -1,11 +1,4 @@
-function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
+
 
 //run when the document has finished to load
 document.addEventListener("DOMContentLoaded", function(event) { 

@@ -2,16 +2,35 @@
   <head>
     <title>CIT 261 - Esteban Tundidor</title>
     <link rel="stylesheet" href="../css/style.css">
-  <script src="../js/javascript.js"></script>
+    <script src="../js/javascript.js"></script>
+    <script src="../js/media.js"></script>
   </head>
   <body>
 <div>
   <div class="back"><a href="../index.html"><- Back to Menu</a></div>
   <h2>
-    AJAX
+    HTML 5 Media
   </h2>
-  <h3>Asynchronous JavaScript and XML</h3>
+  <h3>Video, Audio and Canvas</h3>
 <div id="mainContent">
+<h3>Video</h3>
+
+  <video id="video" width="360px">
+    <source src="https://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/rabbit320.webm" type="video/mp4">
+      mmm, something went wrong or your browser doesn't support HTML5 video.
+  </video><br/><br/>
+    <button id="play">Play</button> 
+    <button id="mute">Mute</button> 
+    <button id="size">Make bigger</button>
+<h3>Audio</h3>
+<p>Let's listen the Argentinian Anthem</p>
+<audio controls source src="https://www.dl-sounds.com/wp-content/uploads/edd/2015/09/Himno-Nacional-Argentino-preview.mp3" type="audio/mpeg">
+    Update your browser!
+</audio>
+
+<h3>Canvas</h3>
+<p>It's Funniest</p>
+<canvas id="canvas" width="300" height="300"></canvas>
 
 </div>
 <footer>
