@@ -33,7 +33,7 @@ class Citizen extends Man {
   }
 
   greet() {
-      return super.greet();
+      let message = super.greet();
         return message;
   }
 

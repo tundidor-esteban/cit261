@@ -23,43 +23,15 @@ To request data from a server you must use an XMLHttpRequest object. All modern 
 </ul>
 <h3>How it works</h3>
 <img src="https://www.w3schools.com/js/pic_ajax.gif">
-<h3>Example:</h3>
-<pre class="code">
-// 1. create a new XMLHttpRequest object
-var myRequest = new XMLHttpRequest();
-// 2. open the request and pass the HTTP method name and the endpoint as parameters
-myRequest.open('GET', 'https://dummy.restapiexample.com/api/v1/employees');
-// 3. write a function that runs anytime the state of the AJAX request changes
-myRequest.onreadystatechange = function () { 
-    // 4. check if the request has a readyState of 4, which indicates the server has responded
-
-    if (myRequest.readyState === 4) {
-        // 5. insert the content sent by the server, it is plain text is ok. But in case that it is a JSON you need to parse it 
-        var employee = JSON.parse(myRequest.responseText).data[Math.floor(Math.random() * 25)];
-        document.getElementById('ajax-content').innerHTML = employee.employee_name + ' ('+ employee.employee_age +')';
-    }
-};
-//6. you need to send it, usually it is related with an event as a click
-myRequest.send();
-</pre>
-
-<button onclick="ajaxExample()" class="button">Try it!</button>
+<h3>Example GET:</h3>
+<input type="text" id="search" value="meat" name="search" title="type what do you want to search." />
+<button onclick="ajaxExample()" class="button">Search!</button>
 <div id="ajax-content"></div>
 <h3>POST Example:</h3>
-<pre class="code">
-var myRequest = new XMLHttpRequest();
-var json = JSON.stringify('{"name":"Esteban Tundidor","salary":"123","age":"23"}');
-myRequest.open('POST', 'https://dummy.restapiexample.com/api/v1/create');
-myRequest.setRequestHeader('Content-type','application/json; charset=utf-8');
-myRequest.onreadystatechange = function () { 
-  if (myRequest.readyState === 4) {
-    document.getElementById('ajax-content-done').innerHTML = 'Done!';
-  }
-}
-myRequest.send(json);
-</pre>
+<textarea id="textToAnalize" name="textToAnalize">
+  I like to eat delicious tacos. The only thing better is a cheeseburger with cheddar. But then again, pizza with pepperoni, mushrooms, and tomatoes is so good too!  
+</textarea>
 <button onclick="ajaxPostExample()" class="button">Try it!</button>
-<little>(Note: It will fail due CORS restrictions)</little>
 <div id="ajax-content-done"></div>
 
 </div>
