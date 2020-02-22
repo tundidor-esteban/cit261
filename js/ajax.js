@@ -23,7 +23,7 @@ function ajaxPostExample(){
 	var data = 'text=' + document.getElementById('textToAnalize').value;
 
 	var myRequest = new XMLHttpRequest();
-	myRequest.withCredentials = true;
+	//myRequest.withCredentials = false;
 	
 	myRequest.open("POST", "https://api.spoonacular.com/food/detect?apiKey=" + APIKEY);
 	myRequest.setRequestHeader("content-type", "application/x-www-form-urlencoded");
@@ -32,7 +32,19 @@ function ajaxPostExample(){
 
 	myRequest.onreadystatechange = function () { 
 	  if (myRequest.readyState === 4) {
-	    document.getElementById('ajax-content-done').innerHTML = JSON.parse(myRequest.responseText);
+	  	var response = JSON.parse(myRequest.responseText)
+	  	var ol = document.createElement("ol");
+	  	response.annotations.forEach(item => {
+	  		var li = document.createElement("li");
+	  		var img = document.createElement("img");
+	  		img.src = item.image;
+	  		img.style.width = '100px';
+	  		var text = document.createTextNode(item.annotation + '('+item.tag+')');
+			li.appendChild(img);
+			li.appendChild(text);
+			ol.appendChild(li);
+	  	});
+	    document.getElementById('ajax-content-done').appendChild(ol);
 	  }
 	}
 
