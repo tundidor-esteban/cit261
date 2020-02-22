@@ -24,10 +24,21 @@
     <input id="item" type="text" class="input_big" placeholder="Type new items, it will prevent duplicate content">
     <button id="insert">Insert</button>
     <button id="clear">Clear All</button>
+    <button id="show">Show Object</button>
+    <button id="replace">Replace Object</button>
+    <h4>Select Storage</h4>
+    <div>
+      <input type="radio" id="local" name="storage" value="local" checked="true">
+      <label for="local">Local Storage</label><br>
+      <input type="radio" id="session" name="storage" value="session">
+      <label for="session">Session Storage</label>
+    </div>
+    
+    <h4>Local Storage</h4>
+    <ul id="itemsListLS"></ul>
 
-    <h4>Items</h4>
-    <ul id="itemsList"></ul>
-
+    <h4>Session Storage</h4>
+    <ul id="itemsListSS"></ul>
 </div>
 <footer>
   <little>Main Sources: w3schools.com // developer.mozilla.org </little> &copy;Esteban Tundidor

@@ -21,11 +21,24 @@ class Villain extends Man {
   constructor (name) {
     super(name, 'villain');
   }
+
+  bye(){
+    console.log('holo');
+  }
 }
 
 class Citizen extends Man {
   constructor (name) {
     super(name, 'citizen');
+  }
+
+  greet() {
+      return super.greet();
+        return message;
+  }
+
+  bye(){
+    console.log('bye bye');
   }
 }
 
