@@ -23,11 +23,9 @@ function ajaxPostExample(){
 	var data = 'text=' + document.getElementById('textToAnalize').value;
 
 	var myRequest = new XMLHttpRequest();
-	//myRequest.withCredentials = false;
 	
 	myRequest.open("POST", "https://api.spoonacular.com/food/detect?apiKey=" + APIKEY);
 	myRequest.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-	//myRequest.setRequestHeader("X-RapidAPI-Host","spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
 	myRequest.setRequestHeader("cache-control", "no-cache");
 
 	myRequest.onreadystatechange = function () { 
