@@ -1,5 +1,3 @@
-
-
 //run when the document has finished to load
 document.addEventListener("DOMContentLoaded", function(event) { 
 	//Elements
@@ -7,8 +5,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	let example2 = document.getElementById('example2');
 	let text1 = document.getElementById('text1');
 
-
-	text1
 
 	document.getElementById('add').addEventListener('mouseover', (e) => {
 		let div = document.createElement('div');
@@ -44,9 +40,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	document.getElementById('replace').addEventListener('click', (e) => {
 		var div = document.createElement('div');
+		var original = document.getElementById('text1');
 		div.textContent = 'Hi, I am the replace';
 		//it will replace only the first because when we create the relation at line 14, it was only the original
-		example2.replaceChild(div, text1); 
+		example2.replaceChild(div, original); 
 	});
 
 });

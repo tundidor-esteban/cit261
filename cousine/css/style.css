@@ -1,0 +1,103 @@
+* { margin: 0; box-sizing: border-box; } 
+
+body { 
+    font-size: 16px; 
+    line-height: 32px;
+    font-family: sans-serif;
+    color: black;
+    background-color: yellowgreen;
+}
+
+h2 {
+    font-size: 2.0rem;
+    text-align: center;
+    color: #de1d22;
+}
+
+h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #bbb;
+    margin-top: 10px;
+}
+
+h4{
+    clear: both;
+} 
+
+button {
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
+header, main, footer {
+    margin: 1.25rem auto;
+    padding: .5rem;
+    max-width: 850px;
+}
+
+header, footer, footer a {
+    text-align: center;
+    background-color: forestgreen;
+    color: #fafafa;
+}
+
+header img {
+    width: 300;
+    height: auto;
+    float: right;
+}
+
+div.back {
+    background-color: #efefef;
+    padding-left: 5px;
+    margin: -5 -5 10px -5;
+    font-size: 10pt;
+    line-height: 20px;
+}
+div.back a{
+    text-decoration: none;
+    color:#D10101;
+}
+
+footer {
+    font-size: 0.75em;
+    width: 100%;
+ }
+
+
+div#mainContent {
+    padding: 10px 0;
+    background-color: #FFFFFF;
+    min-height: 100%;
+    height: 100%;
+}
+
+
+.hero {
+    text-align: center;
+    background-color: forestgreen;
+    color: #fafafa;
+    height: 200px;
+    width: 100vw;
+    background: url(../img/hero.jpg);
+    background-size: cover;
+    display: inline-grid;
+}
+.hero h1 {
+    font-size: 50pt;
+    vertical-align: middle;
+    padding: 20px;
+    margin: auto;
+}
+
+.hero h3 {
+    border-bottom: 1px solid #bbb;   
+}
