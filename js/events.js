@@ -80,4 +80,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	})
 
 
+	window.addEventListener("orientationchange",(e)=>{
+		alert('rotation detected!');
+	});
 });
