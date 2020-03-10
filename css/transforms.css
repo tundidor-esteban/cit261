@@ -12,9 +12,9 @@
 }
 
 .box1:hover,.box2:hover,.box3:hover,.box4:hover {
-    border-radius: 0;
     transform: rotate(180deg);
     background-color:darkred;	
+    border: solid 1px black;
     border-radius: 40%;
     transition: border-radius 1s ease, 
                 background-color 1s ease, 
@@ -22,7 +22,6 @@
 }
 
 .box5:hover {
-    border-radius: 0;
     transform: rotate(360deg);
     background-color:darkred;	
     border-radius: 40%;
