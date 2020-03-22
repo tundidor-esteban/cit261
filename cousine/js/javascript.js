@@ -46,7 +46,10 @@ function showMissingIngredients(e){
 
 function showRecipe(recipeId){
 	getRecipeById(recipeId,(results) =>{
-		console.dir(results);
+		document.getElementById("recipeModal").style.display = "block";
+		document.getElementById("modalTitle").innerHTML = results.title;
+		document.getElementById("modalImg").src = results.image;
+		document.getElementById("modalBody").innerHTML = results.summary;
 	});
 }
 
@@ -54,7 +57,6 @@ function dynamicHandler(e){
 	if (hasClass(e.target, 'recipe') || hasClass(e.target, 'recipeImg')) {
 		showMissingIngredients(e);
 	}else if(e.target.id == 'showRecipe'){
-
 		showRecipe(e.target.getAttribute('data-id'));
 	}
 }
@@ -69,11 +71,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	handler.setList(ingredients);
 	var recipesList = new ListHandler("recipes",recipes);
 	
-  	//remember lists of ingredients
+  	//Topic Loops, functions, objects, parameters, etc
   	handler.getItems().forEach((item,id) => {
     	handler.appendItem(item,id);
   	});
 
+  	//Topic Events & DOM
 	input.addEventListener('keypress', (e) => {
 	    if( e.keyCode === 13 ) {
 	    	handler.insertItem(input.value,undefined,true);
@@ -81,11 +84,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	    }
 	});
   
+  	//Topic Events & DOM
 	addIngredient.addEventListener('click', (e)=> {
 	 handler.insertItem(input.value,undefined,true);
 	 input.value = '';
 	});
 
+	//Topic AJAX & DOM
 	document.getElementById('search').addEventListener('click', (e)=> {
 		document.getElementById('waiting').classList.remove("hidden");
 		recipes.innerHTML = '';
@@ -112,14 +117,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	});
 
 
+	//Topic Events -  desktop Events
 	document.addEventListener('click',  (e) => {
 		dynamicHandler(e);
     });
 
+	//Topic Events - Mobile Events
 	document.addEventListener('touchstart', (e) => {
 		dynamicHandler(e);
     });
 
+	//TOPIC HTML 5 Canvas!
     var canvas = document.getElementById("subtitle");
 	var ctx = canvas.getContext("2d");
 	ctx.globalAlpha = 0.2;
@@ -130,4 +138,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	ctx.fillStyle = "red";
 	ctx.textAlign = "center";
 	ctx.fillText("Cooking Ideas", canvas.width/2, canvas.height/2,400);
+
+	//Modal close
+	document.getElementsByClassName("close")[0].addEventListener('click', (e)=> {
+  		document.getElementById("recipeModal").style.display = "none";
+	});
 });

@@ -128,14 +128,14 @@ div#mainContent {
   .column {
     max-width: 32.5%;
     margin-left: 10px;
-    max-height: 700px;
-    min-height: 700px;
+    max-height: 656px;
+    min-height: 656px;
     overflow-y: scroll;
   }
 }
 
 ul#ingredients{
-  max-height: 500px;
+  max-height: 450px;
   overflow-y: scroll;
 }
 
@@ -293,4 +293,76 @@ canvas#subtitle{
   max-width: 400px;
   height: 60px;
   margin: 0 auto;
+}
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100vw; 
+  height: 100vh;
+  overflow: scroll;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4); 
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+  border-radius: 7%;
+}
+
+.modal h2 {
+  color: white;
+}
+
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  width: 100vw;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-header {
+  padding: 2px 16px;
+  background-color: orange;
+  color: white;
+}
+.modal-body {padding: 2px 16px;}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+#modalImg {
+  width: 33%;
+  float: right;
+  border-radius: 7%;
+}
+
+#modalBody{
+  float: left;
+  width: 60%;
+  margin: 15px;
 }
