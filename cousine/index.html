@@ -5,16 +5,51 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/api.js"></script>
+    <script src="js/listHandler.js"></script>
     <script src="js/javascript.js"></script>
 </head>
 <body>
 	<div class="hero" id="hero">
-		<h1>What Should I Eat Today?</h1>
-		<h3>Cooking Ideas</h3>
+		<h1>What do we eat today?</h1>
+		<canvas id="subtitle"></canvas>
 	</div>
 	<div id="mainContent">
+		<div class="topContent"></div>
+		<div class="content">
+			<div class="column" id="ingredientsColumn">
+				<h2>Ingredients</h2>
+				<p>The ones that you already have</p>
+				<div class="form">
+				    <input id="inputIngredients" type="text" class="input_big" placeholder="Add the ingredients you already have">
+				    <button id="addIngredient">Add</button>
+					<ul id="ingredients"></ul>
+					<button id="search" class="btn_big">Search</button>
+				</div>
+			</div>
+			<div class="column" id="recipesColumn">
+				<h2>Recipient Options</h2>
+				<p>Select one option</p>
+				<ul class="grid" id="recipes">
+				</ul>
+				<div id="waiting" class="hidden">
+					  <div class="box1">
+					    <div class="box2">
+					      <div class="box3">
+					        <div class="box4">
+					        	<div class="box5">
+					        	</div>
+					        </div>
+					      </div>
+					    </div>
+					  </div>
+				</div>
+			</div>
+			<div class="column" id="missingIngredientsColumn">
+				<h2>Missing Ingredients</h2>
+				<p>what you need to buy</p>
+				<ul class="grid" id="missingIngredients"></ul>
+			</div>
+		</div>
 	</div>
-	<footer>
-		&copy;Esteban Tundidor
-	</footer>
 </body>
