@@ -143,4 +143,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	document.getElementsByClassName("close")[0].addEventListener('click', (e)=> {
   		document.getElementById("recipeModal").style.display = "none";
 	});
+		//Modal close
+	document.getElementsByClassName("close")[0].addEventListener('touchstart', (e)=> {
+  		document.getElementById("recipeModal").style.display = "none";
+	});
 });

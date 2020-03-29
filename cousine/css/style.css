@@ -313,6 +313,7 @@ canvas#subtitle{
   border-radius: 7%;
 }
 
+
 .modal h2 {
   color: white;
 }
@@ -365,4 +366,21 @@ canvas#subtitle{
   float: left;
   width: 60%;
   margin: 15px;
+}
+
+@media (max-width: 600px) {
+  .modal {
+    height: 80vh;
+  }
+  .modal-content {
+    height: 80vh;
+  }
+  #modalBody{
+    width: 95%;
+    margin: 5px;
+  }
+  #modalImg {
+    width: 95%;
+    border-radius: 7%;
+  }
 }
